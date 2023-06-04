@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -29,5 +30,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'anthony.croshaw@gmail.com',
             'password' => Hash::make('Lanzarote2012')
         ]);
+
+        Product::factory(10)->create();
     }
 }
