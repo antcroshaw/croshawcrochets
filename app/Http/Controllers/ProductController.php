@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         return view('auth.products.index', [
-            'products' =>  Product::all(),
+            'products' =>  Product::orderBy('id','desc')->paginate(10)
            
         ]);
     }
