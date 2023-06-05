@@ -37,9 +37,13 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(product $product)
+    public function show(Product $product)
     {
-        //
+        return view('auth.products.show', [
+
+            'product' => $product,
+           
+        ]);
     }
 
     /**

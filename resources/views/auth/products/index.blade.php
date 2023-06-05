@@ -43,7 +43,7 @@
                 @foreach ($products as $product )
                 <tr>
                     
-                    <td><a href="#" class="text-decoration-none text-secondary"> {{ $product->name }}</a></td>
+                    <td><a href="{{ route('Products.show', $product->id) }}" class="text-decoration-none text-secondary"> {{ $product->name }}</a></td>
                     <td>£{{ $product->price }}</td>
                     <td>{{ Illuminate\Support\Str::limit($product->description, 10) }}</td>
                     <td>{{ $product->available }}</td>
