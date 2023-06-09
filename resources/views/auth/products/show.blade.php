@@ -14,7 +14,7 @@
     <div class="card-body">
           
       <p> content goes here</p>
-      <img src="public/images/default-image.jpg"
+      <img src="{{ asset('/images/default-image.jpg') }}" width="50%" />
         <br>
         <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a></p>
 
