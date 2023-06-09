@@ -12,9 +12,11 @@
     </div>
     
     <div class="card-body">
-          
+         
       <p> content goes here</p>
-      <img src="{{ asset('/images/default-image.jpg') }}" width="50%" />
+     
+      
+      <img src="{{ asset('/images/' . $product->image) }}" width="50%" />
         <br>
         <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a></p>
 

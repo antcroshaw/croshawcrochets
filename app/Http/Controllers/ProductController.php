@@ -37,11 +37,11 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show($id)
     {
         return view('auth.products.show', [
 
-            'product' => $product,
+            'product' => Product::find($id),
            
         ]);
     }
