@@ -16,7 +16,8 @@
       <p> content goes here</p>
      
       
-      <img src="{{ asset('/images/' . $product->image) }}" width="50%" />
+      <img src="{{ url('storage/images/default-image.jpg') }}" alt="" title="" />
+
         <br>
         <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a></p>
 
