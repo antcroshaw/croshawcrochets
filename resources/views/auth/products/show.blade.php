@@ -11,17 +11,20 @@
         {{ $product->name }}
     </div>
     
-    <div class="card-body">
+    <div class="card-body mx-auto">
          
-      <p> content goes here</p>
+      <p> <strong>Name: </strong>{{ $product->name }}</p>
+      <p><strong>Description: </strong>{{ $product->description }}</p>
+      <p><strong>Price: {{ $product->price }}</strong></p>
      
       
-      <img src="{{ url('storage/images/default-image.jpg') }}" alt="" title="" />
+      <img src="{{ url('storage/images/default-image.jpg') }}" alt="" title="" class="card-img-top" />
 
-        <br>
-        <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a></p>
+        
 
  </div>
+ <div class="mx-auto"><a href="/Products" type="button" class="btn btn-secondary btn-sm">back to products</a></p>
+
  </div>
  </div>
  </div>
