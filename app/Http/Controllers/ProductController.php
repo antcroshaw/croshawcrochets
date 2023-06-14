@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductFormRequest;
 
 class ProductController extends Controller
 {
@@ -29,9 +30,17 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProductFormRequest $request)
     {
-        //
+        dd('store');
+        $request->validated();
+        Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
+
+        return redirect('Products/')->with('message', 'Product created successfully');
     }
 
     /**

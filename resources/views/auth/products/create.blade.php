@@ -24,6 +24,7 @@
 
 
   <form action="{{ route('Products.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
     <div class="form-group">
       <label for="name">Name of Product</label>
       <input type="text" class="form-control" id="name" aria-describedby="product description" placeholder="Enter name of product">
