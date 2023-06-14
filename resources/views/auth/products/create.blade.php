@@ -23,25 +23,24 @@
         </div>
 
 
-        <form action="{{ route('Products.store') }}" method="POST" enctype="multipart/form-data">
-  @csrf
-    <div class="mb-3">
-      <label for="name" class="form-label">Product Name</label>
-      <input type="text" class="form-control" id="name" name="name">
+  <form action="{{ route('Products.store') }}" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="name">Name of Product</label>
+      <input type="text" class="form-control" id="name" aria-describedby="product description" placeholder="Enter name of product">
     </div>
-    <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-       <input type="textarea" name="description">
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="descriptnio" rows="3"></textarea>
       </div>
-      <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
-        <input type="text" name="price" />
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price" aria-describedby="product price" placeholder="Enter price">
       </div>
-    
-    <button type="submit" class="btn btn-outline-secondary btn-sm">Create</button>
+      <br>
+      <button type="submit" class="btn btn-outline-secondary btn-sm">Create</button>
   </form>
   <br>
- <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a> |  <a href="{{ route('Products.index')}}" type="button" class="btn btn-secondary btn-sm">Products Home</a></p>
+ <div class="mx-auto"><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a> |  <a href="{{ route('Products.index')}}" type="button" class="btn btn-secondary btn-sm">Products Home</a></p>
     </div>
 </div>
         </div></div></div>
