@@ -15,16 +15,19 @@ class ProductFormRequest extends FormRequest
     }
 
     /**
+
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, mixed>
      */
-    public function rules(): array
+    public function rules()
     {
-        return [
+       
+        $rules = [
             'name' => 'required',
-            'description' => 'required|max:255',
+            'description' => 'required',
             'price' => 'required|numeric'
-        ];
+           ];
+           return $rules;
     }
 }

@@ -32,7 +32,7 @@ class ProductController extends Controller
      */
     public function store(ProductFormRequest $request)
     {
-        dd('store');
+    
         $request->validated();
         Product::create([
             'name' => $request->name,

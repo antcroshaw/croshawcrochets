@@ -27,15 +27,15 @@
     @csrf
     <div class="form-group">
       <label for="name">Name of Product</label>
-      <input type="text" class="form-control" id="name" aria-describedby="product description" placeholder="Enter name of product">
+      <input type="text" class="form-control" id="name" name="name" aria-describedby="product description" placeholder="Enter name of product">
     </div>
     <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" id="descriptnio" rows="3"></textarea>
+        <textarea class="form-control" id="description" name="description" rows="3"></textarea>
       </div>
     <div class="form-group">
         <label for="price">Price</label>
-        <input type="text" class="form-control" id="price" aria-describedby="product price" placeholder="Enter price">
+        <input type="text" class="form-control" id="price" name="price" aria-describedby="product price" placeholder="Enter price">
       </div>
       <br>
       <button type="submit" class="btn btn-outline-secondary btn-sm">Create</button>
