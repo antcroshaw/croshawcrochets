@@ -60,7 +60,7 @@
             </tbody>
         </table> 
         <div class="pagination justify-content-center">
-            {{ $products->links() }}
+            {{ $products->links('pagination::bootstrap-5') }}
             </div>
        <br>
         <br>
