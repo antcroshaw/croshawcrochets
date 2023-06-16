@@ -49,7 +49,7 @@
                     <td>{{ $product->available }}</td>
                     <td> <a type="button" class="btn btn-sm btn-warning " href="#">Edit</a></td>
 
-                    <td> <form method="POST"  onsubmit="return confirm('The product will be removed permanently. Are you sure?')" action="#">
+                    <td> <form method="POST"  onsubmit="return confirm('The product will be removed permanently. Are you sure?')" action="{{ route('Products.destroy', $product->id) }}">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
