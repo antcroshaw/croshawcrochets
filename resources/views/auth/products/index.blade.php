@@ -47,7 +47,7 @@
                     <td>£{{ $product->price }}</td>
                     <td>{{ Illuminate\Support\Str::limit($product->description, 10) }}</td>
                     <td>{{ $product->available }}</td>
-                    <td> <a type="button" class="btn btn-sm btn-warning " href="#">Edit</a></td>
+                    <td> <a type="button" class="btn btn-sm btn-warning " href="{{ route('Products.edit',$product->id) }}">Edit</a></td>
 
                     <td> <form method="POST"  onsubmit="return confirm('The product will be removed permanently. Are you sure?')" action="{{ route('Products.destroy', $product->id) }}">
                         @csrf
