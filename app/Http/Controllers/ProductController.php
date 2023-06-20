@@ -68,9 +68,16 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update()
+    public function update(ProductFormRequest $request,$id)
     {
-        //
+        $request->validated();
+        Product::where('id',$id)->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price
+        ]);
+
+        return redirect('Products/')->with('message', 'Product updated successfully');
     }
 
     /**

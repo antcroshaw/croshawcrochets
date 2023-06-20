@@ -23,7 +23,7 @@
         </div>
 
 
-  <form action="" method="POST" enctype="multipart/form-data">
+  <form action="{{ route('Products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
     <div class="form-group">
