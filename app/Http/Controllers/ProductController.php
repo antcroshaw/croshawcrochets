@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\product;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductFormRequest;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductController extends Controller
 {
@@ -34,9 +37,16 @@ class ProductController extends Controller
     {
     
         $request->validated();
+        //image processing assuming it passes validatiin
+
+        $user = auth()->user();
+        $filename = $user->id . '-' . uniqid() . '.jpg';
+        $imgData = Image::make($request->file('image'))->fit(120)->encode('jpg');
+        Storage::put('public/images/' . $filename, $imgData);    
         Product::create([
             'name' => $request->name,
             'description' => $request->description,
+            'image' => $filename,
             'price' => $request->price
         ]);
 

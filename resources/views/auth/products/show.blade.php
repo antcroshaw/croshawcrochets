@@ -18,7 +18,7 @@
       <p><strong>Price: {{ $product->price }}</strong></p>
      
       
-      <img src="{{ url('storage/images/default-image.jpg') }}" alt="" title="" class="card-img-top" />
+      <img src="{{ url('storage/images/' . $product->image) }}" alt="" title="" class="card-img-top" />
 
         
 
