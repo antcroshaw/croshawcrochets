@@ -81,6 +81,30 @@ class ProductController extends Controller
     public function update(ProductFormRequest $request,$id)
     {
         $request->validated();
+        $currentProduct = Product::where('id',$id)->first();
+     
+        //code for file checking
+        if($request->image != ''){        
+            $path = base_path().'/storage/app/public/images/';
+  
+            //code for remove old file
+            if($currentProduct->image != ''  && $request->image != null && $currentProduct->image != 'default-image.jpg'){
+                 $file_old = $path.$currentProduct->image;
+                 unlink($file_old);
+            }
+  
+            //upload new file
+            $user = auth()->user();
+            $filename = $user->id . '-' . uniqid() . '.jpg';
+            $imgData = Image::make($request->file('image'))->orientate()->fit(400)->encode('jpg');
+            Storage::put('public/images/' . $filename, $imgData); 
+  
+            //for update in table
+            $currentProduct->update(['image' => $filename]);
+       }
+
+        
+         
         Product::where('id',$id)->update([
             'name' => $request->name,
             'description' => $request->description,

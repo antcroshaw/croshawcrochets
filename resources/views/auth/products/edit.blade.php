@@ -34,6 +34,14 @@
         <label for="description">Description</label>
         <textarea class="form-control" id="description" name="description" rows="3"> {{ $product->description }}</textarea>
       </div>
+      <div class="form-group">
+        <label for="image">image</label>
+        <input type="file" name="image">
+      </div>
+      <div class="form-group">
+        <img src="{{ url('storage/images/' . $product->image) }}" alt="" title="" class="card-img-top"  width="200"/>
+
+      </div>
     <div class="form-group">
         <label for="price">Price</label>
         <input type="text" class="form-control" id="price" name="price" aria-describedby="product price" placeholder="Enter price" value="{{ $product->price }}">
