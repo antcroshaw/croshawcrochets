@@ -37,16 +37,11 @@ class ProductController extends Controller
     {
     
         $request->validated();
-        //image processing assuming it passes validatiin
-
-        $user = auth()->user();
-        $filename = $user->id . '-' . uniqid() . '.jpg';
-        $imgData = Image::make($request->file('image'))->orientate()->fit(400)->encode('jpg');
-        Storage::put('public/images/' . $filename, $imgData);    
+       
         Product::create([
             'name' => $request->name,
             'description' => $request->description,
-            'image' => $filename,
+            'image' => $this->storeImage($request),
             'price' => $request->price
         ]);
 
@@ -93,13 +88,7 @@ class ProductController extends Controller
                  unlink($file_old);
             }
   
-            //upload new file
-            $user = auth()->user();
-            $filename = $user->id . '-' . uniqid() . '.jpg';
-            $imgData = Image::make($request->file('image'))->orientate()->fit(400)->encode('jpg');
-            Storage::put('public/images/' . $filename, $imgData); 
-  
-            //for update in table
+            $filename = $this->storeImage($request);
             $currentProduct->update(['image' => $filename]);
        }
 
@@ -124,5 +113,16 @@ class ProductController extends Controller
 
         return redirect('Products/')->with('message', 'Product has been deleted successfully');
     
+    }
+
+    private function storeImage($request){
+        $user = auth()->user();
+        if($request->image == '') {
+            return $filename = 'default-image.jpg';
+        }
+        $filename = $user->id . '-' . uniqid() . '.jpg';
+        $imgData = Image::make($request->file('image'))->orientate()->fit(400)->encode('jpg');
+        Storage::put('public/images/' . $filename, $imgData); 
+        return $filename;
     }
 }
