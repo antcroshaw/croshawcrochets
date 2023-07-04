@@ -37,7 +37,13 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Track Order</a></li>
-                    <li><a href="#">Login</a></li>
+                  
+                       @auth
+                       <li><a href="{{ route('home') }}">admin</a></li>
+                       @else
+                       <li><a href="{{ route('login') }}">Login</a></li>
+                       @endauth
+                  
                     <li><a href="#">Signup</a></li>
 
                     <li class="dropdown">
