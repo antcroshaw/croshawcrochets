@@ -22,6 +22,13 @@ class ProductController extends Controller
         ]);
     }
 
+    public function shop_front() {
+        return view('index', [
+            'products' =>  Product::orderBy('id','desc')->paginate(3)
+           
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
