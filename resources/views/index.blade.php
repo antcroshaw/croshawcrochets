@@ -39,7 +39,7 @@
                             <h3 class="card-title mb-3">
                                 {{ $product->name }}
                             </h3> 
-                            <img src="{{ asset($product->image) }}" class="img-fluid" alt="">
+                            <img src="{{ url('storage/images/' . $product->image) }}" class="img-fluid" alt="">
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, laborum nemo. Nobis voluptatibus labore ut.
                             </p>
