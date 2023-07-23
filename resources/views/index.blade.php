@@ -27,11 +27,11 @@
 
     <section class="p-5">
         <div class="container">
-            <div class="row text-center g-4">
+            <div class="row text-center g-4 d-flex align-items-stretch">
 
                 @foreach ($products as $product )
                 <div class="col-md">
-                    <div class="card bg-dark text-light">
+                    <div class="card bg-dark text-light card h-100">
                         <div class="card-body text-center">
                             <div class="h1">
                                 <i class="bi bi-laptop"></i>
@@ -39,7 +39,7 @@
                             <h3 class="card-title mb-3">
                                 {{ $product->name }}
                             </h3> 
-                            <img src="{{ url('storage/images/' . $product->image) }}" class="img-fluid" alt="">
+                            <img src="{{ url('storage/images/' . $product->image) }}" class="class="flex-grow-1 object-fit-cover img-fluid height="120" alt="">
                             <p class="card-text">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, laborum nemo. Nobis voluptatibus labore ut.
                             </p>
