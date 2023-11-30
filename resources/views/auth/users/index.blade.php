@@ -19,14 +19,26 @@
         </div>
         @endif
     </div>
+    <div class="card-body mx-auto">
          @foreach ($users as $user )
-             <p>{{ $user->name }}</p>
-         @endforeach
-      
-       <br>
-        <br>
-        <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a> | 
-        <a href="#" type="button" class="btn btn-secondary btn-sm">Create new user</a></p>
+             
+        
+        <p> <strong>Name: </strong>{{ $user->name }}</p>
+        <p><strong>Email: </strong>{{ $user->email }}</p>
+        <p><strong>Admin: Yes</strong></p>
+        <p><a type="button" class="btn btn-sm btn-warning " href="{{ route('Users.edit',$user->id) }}">Edit</a></p>
+
+
+        <hr>
+
+        @endforeach
+       
+        
+       
+  
+          
+  
+   </div>
 
  </div>
  </div>
