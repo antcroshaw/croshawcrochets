@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <div class="list-group">
                         <a href="{{ route('Products.index')}}" class="list-group-item list-group-item-action">Products</a>
-                        <a href="/" class="list-group-item list-group-item-action">Users</a>
+                        <a href="{{ route('Users.index')}}" class="list-group-item list-group-item-action">Users</a>
                         <a href="/" class="list-group-item list-group-item-action">About</a>
                        
                        
