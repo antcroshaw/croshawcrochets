@@ -65,7 +65,7 @@
        <br>
         <br>
         <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a> | 
-        <a href="Products/create" type="button" class="btn btn-secondary btn-sm">Create new product</a></p>
+        <a href="Products/create" type="button" class="btn btn-primary btn-sm">Create new product</a></p>
 
  </div>
  </div>
