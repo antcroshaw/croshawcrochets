@@ -30,7 +30,7 @@
 
 
         <hr>
-<p>        <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a> |  <a href="#" type="button" class="btn btn-primary btn-sm">create new user</a>
+<p>        <p><a href="/home" type="button" class="btn btn-secondary btn-sm">admin menu</a> |  <a href="Users/create" type="button" class="btn btn-primary btn-sm">create new user</a>
 </p>
         @endforeach
        
